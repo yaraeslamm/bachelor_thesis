@@ -1,0 +1,15 @@
+{
+    "description": "Interpolate to startup values",
+    "header": {
+        "target": "head",
+        "name": "interpolate to startup values",
+        "group": "util",
+        "loop": 1,
+        "interpolation": "linear",
+        "prio": 99
+    },
+    "frames": [
+        {"frame": 5, "values": [0, 127, 0, 0, 0, 0, 0, 0, 0, 0, 0, 127, 127, 127]},
+        {"frame": 7, "values": [0, 127, 0, 0, 0, 0, 0, 0, 0, 0, 0, 127, 127, 127]}
+    ]
+}

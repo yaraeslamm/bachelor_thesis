@@ -1,0 +1,71 @@
+{
+    "description": "Default animation for editor based on blink animation",
+    "header": {
+        "target": "head",
+        "name": "work_in_progress",
+        "group": "test",
+        "minPauseFrames": 20,
+        "maxPauseFrames": 100,
+        "loop": -1,
+        "prio": 50
+    },
+    "frames": [
+        {
+            "frame": 0,
+            "values": [
+                0,
+                null,
+                null,
+                0,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+            ]
+        },
+        {
+            "frame": 1,
+            "values": [
+                255,
+                null,
+                null,
+                70,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+            ]
+        },
+        {
+            "frame": 3,
+            "values": [
+                0,
+                null,
+                null,
+                0,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+            ]
+        }
+    ]
+}

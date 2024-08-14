@@ -1,0 +1,8 @@
+{
+    "description": "looking straight with both eyes",
+    "header": {"target": "android", "name": "surprise", "group": "facial expression", "minPauseFrames": 1, "maxPauseFrames": 1, "loop": 1, "prio": 100, "mode": "abs", "active": false},
+    "frames": [
+        {"frame": 0, "values": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]},
+        {"frame": 1, "values": [null, null, null, null, null, null, null, 200, 200, 100, 100, null, null, null, null, 110, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]}
+    ]
+}
