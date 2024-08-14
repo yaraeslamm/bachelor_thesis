@@ -1,0 +1,24 @@
+{
+    "description": "leaning the head left for android",
+    "header": {"target": "android", "name": "headLeanLeft", "group": "head", "minPauseFrames": 80, "maxPauseFrames": 200, "loop": -1, "prio": 100, "mode": "rel", "active": false},
+    "frames": [
+        {"frame": 0, "values": [null, null, null, null, null, null, null, null, null, null,
+        null, null, null, null, null, null, 50, null, null, null, 
+        null, null, null, null, null, null, null, null, null, null, 
+        null, null, null, null, null, null, null, null, null, null, 
+        null, null, null, null, null, null, null, null, null, null, 
+        null, null]},
+        {"frame": 20, "values": [null, null, null, null, null, null, null, null, null, null, 
+        null, null, null, null, null, null, 50, null, null, null, 
+        null, null, null, null, null, null, null, null, null, null, 
+        null, null, null, null, null, null, null, null, null, null, 
+        null, null, null, null, null, null, null, null, null, null, 
+        null, null]},
+        {"frame": 80, "values": [null, null, null, null, null, null, null, null, null, null, 
+        null, null, null, null, null, null, -100, null, null, null, 
+        null, null, null, null, null, null, null, null, null, null, 
+        null, null, null, null, null, null, null, null, null, null, 
+        null, null, null, null, null, null, null, null, null, null, 
+        null, null]}
+    ]
+}

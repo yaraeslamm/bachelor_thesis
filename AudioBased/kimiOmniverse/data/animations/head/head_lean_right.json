@@ -1,0 +1,8 @@
+{
+    "description": "leaning the head to the right",
+    "header": {"target": "head", "name": "headLeanRelRight", "group": "saccades", "minPauseFrames": 60, "maxPauseFrames": 120, "loop": -1, "prio": 100, "mode": "rel", "active": false},
+    "frames": [
+        {"frame": 0, "values": [null, null, null, null, null, null, null, null, null, null, null, 15, null, null]},
+        {"frame": 6, "values": [null, null, null, null, null, null, null, null, null, null, null, 0, null, null]}
+    ]
+}

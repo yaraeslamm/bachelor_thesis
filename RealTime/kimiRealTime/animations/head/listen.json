@@ -1,0 +1,8 @@
+{
+    "description": "listen",
+    "header": {"target": "head", "name": "listen", "loop": 1, "prio": 100, "interpolation": "linear"},
+    "frames": [
+        {"frame": 10, "values": [null, 40, null, null, 130, 100, null, null, null, null, null, 250, 200, 255]},
+        {"frame": 12, "values": [null, 40, null, null, 130, 100, null, null, null, null, null, 250, 200, 255]}
+    ]
+}

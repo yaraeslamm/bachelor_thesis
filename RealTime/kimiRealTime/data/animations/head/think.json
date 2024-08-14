@@ -1,0 +1,10 @@
+{
+    "description": "think",
+    "header": {"target": "head", "name": "think", "group": "wait", "minPauseFrames": 0, "maxPauseFrames": 0, "loop": -1, "prio": 99},
+    "frames": [
+        
+        {"frame": 1, "values": [10, 0, 0, 100, null, null, null, null, null, null, null, 80, 80, null]},
+        {"frame": 50, "values": [10, 220, 0, 100, null, null, null, null, null, null, null, 160, 80, null]},
+        {"frame": 100, "values": [10, 0, 0, 100, null, null, null, null, null, null, null, 80, 80, null]}
+    ]
+}

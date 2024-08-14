@@ -1,0 +1,13 @@
+{
+    "description": "andrea right hand flat initial pose",
+    "header": {"target": "android", "name": "RightHandFlat", "group": "hands", "minPauseFrames": 0, "maxPauseFrames": 0, "loop": 1, "prio": 100, "mode": "abs", "active": false},
+    "frames": [
+        {"frame": 3, "values": [null, null, null, null, null, null, null, null, null, null, 
+        null, null, null, null, null, null, null, null, null, null, 
+        null, null, null, null, null, null, null, null, null, null, 
+        null, null, null, null, null, null, null, null, null, null, 
+        null, null, null, null, null, null, null, 0, 0, 0, 
+        0, 0]}
+        ]
+}
+

@@ -1,0 +1,10 @@
+{
+    "description": "looking left with both eyes and back straight",
+    "header": {"target": "head", "name": "eyesRelLeft", "group": "saccades", "minPauseFrames": 10, "maxPauseFrames": 60, "loop": -1, "prio": 100, "mode": "rel", "active": false},
+    "frames": [
+        {"frame": 0, "values": [null, 15, null, null, null, null, null, null, null, null, null, null, null, null]},
+        {"frame": 3, "values": [null, 0, null, null, null, null, null, null, null, null, null, null, null, null]},
+        {"frame": 10, "values": [null, -15, null, null, null, null, null, null, null, null, null, null, null, null]},
+        {"frame": 13, "values": [null, 0, null, null, null, null, null, null, null, null, null, null, null, null]}
+    ]
+}

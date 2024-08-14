@@ -1,0 +1,12 @@
+{
+    "description": "andrea lifting both arms",
+    "header": {"target": "android", "name": "LiftArmsUp", "group": "arms", "minPauseFrames": 0, "maxPauseFrames": 0, "loop": 1, "prio": 100, "mode": "abs", "active": false},
+    "frames": [
+        {"frame": 3, "values": [null, null, null, null, null, null, null, null, null, null,
+        null, null, null, null, null, null, null, null, null, null,
+        null, null, null, null, null, null, 74, 255, 122, 106,
+        64, null, null, null, null, null, null, null, null, null,
+        64, 255, 120, 106, 64, null, null, null, null, null,
+        null, null]}
+        ]
+}

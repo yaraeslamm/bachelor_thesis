@@ -1,0 +1,12 @@
+{
+    "description": "andrea placing arms on legs",
+    "header": {"target": "android", "name": "BothArmsOnLegs", "group": "arms", "minPauseFrames": 0, "maxPauseFrames": 0, "loop": 1, "prio": 100, "mode": "abs", "active": false},
+    "frames": [
+        {"frame": 10, "values": [null, null, null, null, null, null, null, null, null, null, 
+        null, null, null, null, null, null, null, null, null, null,
+        null, null, null, null, null, null, 47, 158, 100, 147,
+        161, null, null, null, null, null, null, null, null, null,
+        38, 154, 142, 162, 180, null, null, null, null, null,
+        null, null]}
+        ]
+}

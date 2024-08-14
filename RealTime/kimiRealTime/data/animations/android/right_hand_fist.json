@@ -1,0 +1,13 @@
+{
+    "description": "andrea right hand gesture fist",
+    "header": {"target": "android", "name": "RightHandFist", "group": "hands", "minPauseFrames": 0, "maxPauseFrames": 0, "loop": 1, "prio": 100, "mode": "abs", "active": false},
+    "frames": [
+        {"frame": 3, "values": [null, null, null, null, null, null, null, null, null, null, 
+        null, null, null, null, null, null, null, null, null, null, 
+        null, null, null, null, null, null, null, null, null, null, 
+        null, null, null, null, null, null, null, null, null, null, 
+        null, null, null, null, null, null, null, 255, 255, 255, 
+        255, 255]}
+        ]
+}
+

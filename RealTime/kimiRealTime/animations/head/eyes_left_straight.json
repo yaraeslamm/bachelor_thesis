@@ -1,0 +1,9 @@
+{
+    "description": "looking up left with both eyes and back straight",
+    "header": {"target": "head", "name": "eyesLeftAndStraight", "minPauseFrames": 20, "maxPauseFrames": 150, "loop": -1, "prio": 100, "mode": "abs", "active": false},
+    "frames": [
+        {"frame": 0, "values": [null, 128, 128, null, null, null, null, null, null, null, null, null, null, null]},
+        {"frame": 1, "values": [null, 180, 190, null, null, null, null, null, null, null, null, null, null, null]},
+        {"frame": 25, "values": [null, 128, 128, null, null, null, null, null, null, null, null, null, null, null]}
+    ]
+}

@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block scriptfile %}
+    <script type="text/javascript" src="/static/script/animations.js"></script>
+{% endblock %}
+
+
+{% block content %}
+    {% if not connected %}
+        <p>You need to connect to a device first.</p>
+    {% else %}
+        <div class="box">
+            <h3 class="subtitle is-4">Predefined animations</h3>
+            <div class="columns is-multiline">
+                {% for group, animations in grouped_animations.items() %}
+                    <div class="column is-narrow">
+                        <h5 class="subtitle is-5">{{ group|default('Ungrouped')|capitalize() }}</h5>
+                        {% for a in animations %}
+                            <div class="control">
+                                <button id="anim_{{a.name}}" onclick="toggleAnimation(this.name)" name="{{ a.name }}" class="button {% if a.active %} is-info {% endif %}">{{ a.name }}</button>
+                                <span class="tag">{{ a.loop }}</span>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="box">
+            <h3 class="subtitle is-4">Animation editor</h3>
+            <p>
+                Contents of the textarea are saved automatically when switching to other views like Controls as long as the browser tab is not closed (Session storage).
+                This might be helpful for using the sliders to move the head to specific values which can then be copied from <code>Changed Values</code> below.
+                <code>Run</code> starts the animation defined as json in the textarea. 
+                If it is looping or long running <code>Stop</code> can be used to stop it, as long as the <code>name</code> in the header is still the same as when you started the animation.
+                To <code>Save</code> an animation as predefined animation the <code>name</code> from the json will also be used as filename.
+                Saving will fail if a file with this name already exists.
+                For the new saved animation to show up at Predifined animations above, the page needs to be reloaded.
+            </p>
+            <div class="field">
+                <textarea class="textarea" rows="15" id="animationArea"></textarea>
+                <p id="animationValidation" class="help is-hidden is-danger">This animation is invalid</p>
+            </div>
+            <button class="button" onclick="runAnimation()">Run</button>
+            <button class="button" onclick="stopAnimation()">Stop</button>
+            <button class="button" onclick="saveAnimation()">Save</button>
+            <!-- <select>List predefined animaions</select>
+            <button class="button" onclick="open()">Open</button> -->
+            <div class="control">
+                <p>Current Values: <pre id="values_display">{{values|tojson}}</pre></p>
+                <p>
+                    Changed Values: <pre id="changed_values_display">{{changed_values|tojson}}</pre>
+                </p>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

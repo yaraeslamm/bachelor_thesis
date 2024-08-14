@@ -1,0 +1,8 @@
+{
+    "description": "face neutral",
+    "header": {"target": "android", "name": "face Neutral", "group": "facial expression", "minPauseFrames": 1, "maxPauseFrames": 1, "loop": 1, "prio": 100, "mode": "abs", "active": false},
+    "frames": [
+        {"frame": 0, "values": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]},
+        {"frame": 2, "values": [null, null, null, null, null, null, null, 0, 0, 0, 0, null, null, null, null, 0, 128, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]}
+    ]
+}

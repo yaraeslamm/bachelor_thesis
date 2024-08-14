@@ -1,0 +1,9 @@
+{
+  "description": "andrea listening with left arm",
+  "header": {"target": "android", "name": "listen_left", "group": "gpt_demo", "loop": 1, "prio": 100, "mode": "abs", "interpolation": "linear"},
+  "frames": [
+      {"frame": 10, "values": [null, null, 190, 190, 128, null, null, null, null, null, null, null, null, null, null, null, 128, 86, 26, 110, 128, 0, 96, 99, 90, 45, 148, 189, 73, 255, 145, 128, 77, 0, 39, 39, 36, 100, null, null, null, null, null, null, null, null, null, null, null, null, null, null]},
+      {"frame": 12, "values": [null, null, 190, 190, 128, null, null, null, null, null, null, null, null, null, null, null, 128, 86, 26, 110, 128, 0, 96, 99, 90, 45, 148, 189, 73, 255, 145, 128, 77, 0, 39, 39, 36, 100, null, null, null, null, null, null, null, null, null, null, null, null, null, null]}
+      ]
+}
+

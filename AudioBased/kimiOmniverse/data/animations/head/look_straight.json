@@ -1,0 +1,8 @@
+{
+    "description": "think",
+    "header": {"target": "head", "name": "look_straight", "loop": 1, "prio": 100, "interpolation": "linear"},
+    "frames": [
+        {"frame": 6, "values": [0, 127, 127, 0, null, null, null, null, null, null, null, 127, 127, 127]},
+        {"frame": 12, "values": [0, 127, 127, 0, null, null, null, null, null, null, null, 127, 190, 127]}
+    ]
+}

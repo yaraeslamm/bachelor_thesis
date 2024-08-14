@@ -1,0 +1,51 @@
+{
+    "description": "slight smile as loop with low prio",
+    "header": {
+        "target": "head",
+        "name": "keep_smiling",
+        "group": "mouth",
+        "loop": -1,
+        "prio": 10,
+        "interpolation": "linear"
+    },
+    "frames": [
+        {
+            "frame": 0,
+            "values": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                140,
+                255,
+                0,
+                0,
+                0,
+                null,
+                null,
+                null
+            ]
+        },
+        {
+            "frame": 1,
+            "values": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                140,
+                255,
+                0,
+                0,
+                0,
+                null,
+                null,
+                null
+            ]
+        }
+    ]
+}

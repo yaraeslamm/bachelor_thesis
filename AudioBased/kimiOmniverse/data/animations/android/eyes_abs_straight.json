@@ -1,0 +1,9 @@
+{
+    "description": "looking straight with both eyes",
+    "header": {"target": "android", "name": "eyes Straight", "group": "eyes", "minPauseFrames": 70, "maxPauseFrames": 100, "loop": -1, "prio": 100, "mode": "abs", "active": false},
+    "frames": [
+        {"frame": 0, "values": [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]},
+        {"frame": 10, "values": [null, null, 127, 127, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]},
+        {"frame": 13, "values": [null, null, 127, 127, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]}
+    ]
+}

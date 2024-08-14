@@ -1,0 +1,8 @@
+{
+    "description": "close the mouth (abs)",
+    "header": {"target": "head", "name": "mouthClose", "group": "mouth", "minPauseFrames": 10, "maxPauseFrames": 10, "loop": 1, "prio": 100, "mode": "abs", "active": false},
+    "frames": [
+        {"frame": 0, "values": [null, null, null, null, null, null, null, null, null, null, 0, null, null, null]},
+        {"frame": 4, "values": [null, null, null, null, null, null, null, null, null, null, 0, null, null, null]}
+    ]
+}

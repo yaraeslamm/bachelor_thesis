@@ -1,0 +1,12 @@
+{
+    "description": "yawn",
+    "header": {"target": "android", "name": "yawn", "group": "act", "loop": 1, "prio": 100, "interpolation": "linear", "minPauseFrames": 1500, "maxPauseFrames": 7500},
+    "frames": [
+        {"frame": 25, "values": [149,149,128,128,162,154,154,0,0,0,0,0,0,255, null,135,56,155,127, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]},
+        {"frame": 50, "values": [255,255,128,128,255,255,255,0,0,0,0,0,0,255, null,255,128,255,127, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]},
+        {"frame": 62, "values": [219,219,128,128,255,200,200,0,0,0,0,0,0,255, null,255,199,213,127, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]},
+        {"frame": 87, "values": [0,0,128,128,3,1,1,0,0,0,0,0,0,0, null,3,127,127,127, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]},
+        {"frame": 99, "values": [64,64,128,128,3,91,91,0,0,0,0,0,78,0, null,113,127,127,127, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]},
+        {"frame": 111, "values": [0,0,128,128,3,1,1,0,0,0,0,0,0,0, null,3,127,127,127, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]}
+    ]
+}

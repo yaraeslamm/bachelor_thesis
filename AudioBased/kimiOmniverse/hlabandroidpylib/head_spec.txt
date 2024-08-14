@@ -1,0 +1,15 @@
+idx, short, name, init, group
+0, upLid, upper eyelid open close, 0, Head_Eyes
+1, eyeLR, eyeball left right, 127, Head_Eyes
+2, eyeUD, eyeball up down, 0, Head_Eyes
+3, lowLid, lower eyelid open close, 0, Head_Eyes
+4, browUD, eyebrow up down, 0, Head_Eyes
+5, browShr, eyebrow shrink, 0, Head_Eyes
+6, MoCUD, mouth corner up down, 0, Head_Mouth
+7, MoCP, mouth corner pull, 0, Head_Mouth
+8, LipShr, lip shrink, 0, Head_Mouth
+9, LipUD, lip up down, 0, Head_Mouth
+10, MoOC, mouth open close, 0, Head_Mouth
+11, HeadLR, head left right, 127, Head_Neck
+12, HeadUD, head up down, 127, Head_Neck
+13, HeadCW, head CW CCW, 127, Head_Neck

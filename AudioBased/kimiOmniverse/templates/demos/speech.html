@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block scriptfile %}
+    <script type="text/javascript" src="/static/script/speech.js"></script>
+{% endblock %}
+
+
+{% block content %}
+    {% if not connected %}
+        <p>You need to connect to a device first.</p>
+    {% else %}
+        <h3 class="title">Speech demo</h3>
+        <div class="box">
+          <p>
+            <h4 class="subtitle">Audio samples</h4>
+            {% for speech in speech_samples %}
+              <button id="speech_{{speech}}" onclick="speakSample(this.name)" name="{{ speech }}" class="button">{{ speech }}</button>
+            {% endfor %}
+          </p>
+          <p>
+            <h4 class="subtitle">Songs</h4>
+            {% for song in songs %}
+              <button id="song_{{song}}" onclick="singSample(this.name)" name="{{ song }}" class="button">{{ song }}</button>
+            {% endfor %}
+          </p>
+        </div>
+        <div class="box">
+            <h4 class="subtitle">Speak text</h4>
+            <!-- <div class="field is-grouped is-grouped-multiline">
+                <label class="label">TTS URL</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Text input">
+                </div>
+
+                <label class="label">Lipsync URL</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Text input">
+                </div>
+            </div> -->
+            <div class="field">
+                <div class="field has-addons">
+                    <div class="control">
+                      <input id="speakText" class="input is-large" type="text" placeholder="Type what to say">
+                    </div>
+                    <div class="control">
+                      <button id="speakTextButton" onclick="speakText()" class="button is-info is-large">Say!</button>
+                    </div>
+                </div>
+                <div class="field">
+                  <div class="select">
+                    <select id="voice">
+                      <option value="p225" selected>Female 1</option>
+                      <option value="p374">Female 2</option>
+                      <option value="p228">Male</option>
+                    </select>
+                  </div>
+                  <div class="control">
+                    <button class="button" id="cancelSpeechButton" onclick="cancelSpeech()">Cancel</button>
+                    <button class="button" id="repeatSpeechButton" onclick="speakSample('temp')">Repeat</button>
+                  </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

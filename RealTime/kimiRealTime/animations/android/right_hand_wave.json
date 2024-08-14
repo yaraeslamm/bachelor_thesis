@@ -1,0 +1,13 @@
+{
+    "description": "andrea waving with right arm step 1",
+    "header": {"target": "android", "name": "Wave", "group": "arms", "minPauseFrames": 0, "maxPauseFrames": 0, "loop": 1, "prio": 100, "mode": "abs", "active": false},
+    "frames": [
+        {"frame": 3, "values": [null, null, null, null, null, null, null, null, null, null, 
+        null, null, null, null, null, null, null, null, null, null, 
+        null, null, null, null, null, null, null, null, null, null, 
+        null, null, null, null, null, null, null, null, null, 32, 
+        99, 168, 38, 255, 180, null, null, null, null, null, 
+        null, null]}
+        ]
+}
+

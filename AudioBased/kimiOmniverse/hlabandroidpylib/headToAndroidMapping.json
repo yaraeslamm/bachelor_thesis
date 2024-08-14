@@ -1,0 +1,18 @@
+{
+	"description": "Mapping the controller channels from the head to the android to play head animations on the full body android.",
+	"header": {"version": "1.0", "mappingFrom": "head", "mappingTo": "android"},
+	"mapping": [{"description": "UpperEyelid Close/Open -> UpperEyelid Close/Open (left and right separately)", "map": [0,1]},
+		{"description": "Eyeball Left/Right -> Eyeball Left/Right (left and right separately)", "map": [2,3]},
+		{"description": "UEyeball Up/Down -> Eyeball Up/Down", "map": [4]},
+		{"description": "LowerEyelid Close/Open -> LowerEyelid Close/Open (left and right separately)", "map": [5,6]},
+		{"description": "Eyebrow Up/Down -> Eyebrow Up/Down", "map": [7]},
+		{"description": "Eyebrow Shrink -> Eyebrow Shrink", "map": [8]},
+		{"description": "MouthCorner Up/Down -> MouthCorner Up/Down (left and right)", "map": [9, 10]},
+		{"description": "MouthCorner Pull -> MouthCorner Pull", "map": [11]},
+		{"description": "LipShrink -> LipShrink", "map": [12]},
+		{"description": "Lip Up/Down -> Lip Up/Down", "map": [13]},
+		{"description": "Mouth Open/Close -> Mouth Open/Close", "map": [15]},
+		{"description": "Head Left/Right -> Head Left/Right", "map": [16]},
+		{"description": "Head Up/Down -> Head Up/Down", "map": [17]},
+		{"description": "Head CW/CCW -> Head CW/CCW", "map": [18]}]
+}
