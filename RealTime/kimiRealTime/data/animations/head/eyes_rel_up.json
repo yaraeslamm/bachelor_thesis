@@ -1,0 +1,10 @@
+{
+    "description": "looking up with both eyes and back straight",
+    "header": {"target": "head", "name": "eyesRelative", "group": "saccades", "minPauseFrames": 10, "maxPauseFrames": 100, "loop": -1, "prio": 100, "mode": "rel", "active": false},
+    "frames": [
+        {"frame": 0, "values": [null, null, 25, null, null, null, null, null, null, null, null, null, null, null]},
+        {"frame": 3, "values": [null, null, 0, null, null, null, null, null, null, null, null, null, null, null]},
+        {"frame": 10, "values": [null, null, -25, null, null, null, null, null, null, null, null, null, null, null]},
+        {"frame": 13, "values": [null, null, 0, null, null, null, null, null, null, null, null, null, null, null]}
+    ]
+}

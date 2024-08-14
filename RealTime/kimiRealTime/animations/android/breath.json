@@ -1,0 +1,37 @@
+{
+    "description": "andrea breathing slightly",
+    "header": {"target": "android", "name": "Breathing", "group": "body", "minPauseFrames": 10, "maxPauseFrames": 50, "loop": -1, "prio": 100, "mode": "abs", "active": false},
+    "frames": [
+        {"frame": 0, "values": [null, null, null, null, null, null, null, null, null, null,
+        null, null, null, null, null, null, null, null, null, null, 
+        null, null, null, null, 32, 32, null, null, null, null,
+        null, null, null, null, null, null, null, null, 32, 32,
+        null, null, null, null, null, null, null, null, null, null, 
+        null, null]},
+        {"frame": 12, "values": [null, null, null, null, null, null, null, null, null, null, 
+        null, null, null, null, null, null, null, null, null, null, 
+        null, null, null, null, 40, 40, null, null, null, null,
+        null, null, null, null, null, null, null, null, 40, 40, 
+        null, null, null, null, null, null, null, null, null, null, 
+        null, null]},
+        {"frame": 24, "values": [null, null, null, null, null, null, null, null, null, null, 
+        null, null, null, null, null, null, null, null, null, null, 
+        null, null, null, null, 45, 45, null, null, null, null, 
+        null, null, null, null, null, null, null, null, 45, 45, 
+        null, null, null, null, null, null, null, null, null, null, 
+        null, null]},
+        {"frame": 36, "values": [null, null, null, null, null, null, null, null, null, null, 
+        null, null, null, null, null, null, null, null, null, null, 
+        null, null, null, null, 32, 32, null, null, null, null, 
+        null, null, null, null, null, null, null, null, 32, 32, 
+        null, null, null, null, null, null, null, null, null, null, 
+        null, null]},
+        {"frame": 48, "values": [null, null, null, null, null, null, null, null, null, null,
+        null, null, null, null, null, null, null, null, null, null, 
+        null, null, null, null, 32, 32, null, null, null, null,
+        null, null, null, null, null, null, null, null, 32, 32,
+        null, null, null, null, null, null, null, null, null, null, 
+        null, null]}
+        ]
+}
+

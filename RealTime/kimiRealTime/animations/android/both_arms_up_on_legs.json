@@ -1,0 +1,18 @@
+{
+    "description": "andrea lifting both arms and placing them on legs",
+    "header": {"target": "android", "name": "LiftBothArmsAndPlaceOnLegs", "group": "arms", "minPauseFrames": 0, "maxPauseFrames": 0, "loop": 1, "prio": 100, "mode": "abs", "active": false},
+    "frames": [
+        {"frame": 3, "values": [null, null, null, null, null, null, null, null, null, null,
+        null, null, null, null, null, null, null, null, null, null,
+        null, null, null, null, null, null, 74, 255, 122, 106,
+        64, null, null, null, null, null, null, null, null, null,
+        64, 255, 120, 106, 64, null, null, null, null, null,
+        null, null]},
+        {"frame": 10, "values": [null, null, null, null, null, null, null, null, null, null, 
+        null, null, null, null, null, null, null, null, null, null,
+        null, null, null, null, null, null, 47, 158, 100, 147,
+        161, null, null, null, null, null, null, null, null, null,
+        38, 154, 142, 162, 180, null, null, null, null, null,
+        null, null]}
+        ]
+}

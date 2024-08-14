@@ -1,0 +1,11 @@
+{
+    "description": "think slightly interpolated",
+    "header": {"target": "head", "name": "think_interpolated", "group": "wait", "minPauseFrames": 0, "maxPauseFrames": 0, "loop": -1, "prio": 99, "interpolation": "linear"},
+    "frames": [
+        {"frame": 5, "values": [10, 0, 0, 100, null, null, null, null, null, null, null, 80, 80, 127]},
+        {"frame": 45, "values": [10, 0, 0, 100, null, null, null, null, null, null, null, 80, 80, 127]},
+        {"frame": 50, "values": [10, 220, 0, 100, null, null, null, null, null, null, null, 160, 80, 127]},
+        {"frame": 95, "values": [10, 220, 0, 100, null, null, null, null, null, null, null, 160, 80, 127]},
+        {"frame": 100, "values": [10, 0, 0, 100, null, null, null, null, null, null, null, 80, 80, 127]}
+    ]
+}

@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block scriptfile %}
+    <script type="text/javascript" src="/static/script/speech.js"></script>
+{% endblock %}
+
+
+{% block content %}
+    {% if not connected %}
+        <p>You need to connect to a device first.</p>
+    {% else %}
+        <h1 class="title is-1">Embodied chatGPT</h1>
+        <div class="box">
+            <h4 class="subtitle">"Talk" to chatGPT</h4>
+            <div class="field">
+              <div class="control">
+                <button class="button is-primary" id="resetSessionButton" onclick="resetDialogSession()">New Session</button>
+              </div>
+            </div>
+            <div class="field">
+                <div class="field has-addons">
+                  <div class="control">
+                    <button class="button is-large" id="recordButton" onclick="toggleRecord()">Listen</button>
+                  </div>
+                    <div class="control is-expanded">
+                      <input id="gptInputText" class="input is-large" type="text" placeholder="Or type what to say" onkeydown="checkForEnterKey(event)">
+                    </div>
+                    <div class="control">
+                      <button class="button is-large" id="answerTextButton" onclick="answerText()" class="button is-info is-large">Say!</button>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label" for="gptvoice">Voice</label>
+                    <div class="select">
+                        <select id="gptvoice">
+                        <option value="p225" selected>Female 1</option>
+                        <option value="p374">Female 2</option>
+                        <option value="p228">Male</option>
+                        </select>
+                  </div>
+                  <div class="control">
+                    <button class="button" id="cancelSpeechButton" onclick="cancelSpeech()">Cancel</button>
+                    <button class="button" id="repeatSpeechButton" onclick="speakSample('temp')">Repeat</button>
+                    <button class="js-modal-trigger button" data-target="modal-js-example">How does it work?</button>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div id="dialog" class="box" style="overflow-y: scroll; height: 30%;">
+            <h4 class="subtitle">Current Dialog</h4>
+            <!-- <p>Initial Prompt: {{init_prompt}}</p> -->
+        </div>
+        <div id="modal-js-example" class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+              <header class="modal-card-head">
+                <p class="modal-card-title">How does it work?</p>
+                <button class="delete" aria-label="close"></button>
+              </header>
+              <section class="modal-card-body">
+                <h1 class="title">What happens when you press the 'Say!' button?</h1>
+                <div class="content">
+                    <ul>
+                        <li>The text you entered is sent to chatGPT, that we prompted to act as if it was an android robot.</li>
+                        <li>The response we get from chatGPT is sent to a TTS (Text-to-Speech) server to synthesize spoken language.</li>
+                        <li>The spoken language is then processed by a ML (Machine Learning) model that animates a virtual head in 3D space.</li>
+                        <li>Finally we map the virtual 3D animation to actuator commands to control the robot head.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="title is-4">How do you prompt chatGPT?</h2>
+                    <p>{{init_prompt}}</p>
+                </div>
+                <div>
+                    <h2 class="title is-4">What TTS server do you use?</h2>
+                    <p>We use <code>Coqui TTS</code> an open source solution formerly developed by Mozilla. We run their implementation of a TTS server on our own servers.</p>
+                </div>
+              </section>
+              <footer class="modal-card-foot">
+                <!-- <button class="button is-success">Save changes</button>
+                <button class="button">Cancel</button> -->
+              </footer>
+            </div>
+            <!-- <button class="modal-close is-large" aria-label="close"></button> -->
+          </div>
+    {% endif %}
+    <!-- <div class="select">
+      <select id="audio-input-devices">
+          {% for dev in audio_input_devices %}
+              <option value="{{dev.index}}">{{dev['name']}}</option>
+          {% endfor %}
+      </select>
+  </div> -->
+    
+    
+{% endblock %}

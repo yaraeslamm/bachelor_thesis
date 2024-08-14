@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/bulma/css/bulma.css">
+    <link rel="stylesheet" href="/static/bulma/css/bulmaslider.css">
+    {% block scriptfile %}{% endblock %}
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <script type="text/javascript" src="{{ url_for('static', filename='util.js') }}"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <title>Android Controller</title>
+    <!-- {% block custom_script %}{% endblock %} -->
+</head>
+
+<body>
+    <nav class="navbar is-black" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                HLab
+            </a>
+
+            <!-- <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a> -->
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item is-tab {% if request.path == '/controls/' %} is-active {% endif %}" href="/controls" >
+                    Controls
+                </a>
+
+                <a class="navbar-item is-tab {% if request.path == '/animations/' %} is-active {% endif %}"  href="/animations">
+                    Animations
+                </a>
+                <!-- <div class="navbar-item has-dropdown is-hoverable is-tab {% if request.path == '/demo/' %} is-active {% endif %}">
+                    <a class="navbar-link">
+                        Interactive
+                    </a>
+
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item is-tab {% if request.path == '/facedetector/' %} is-active {% endif %}"  href="/facedetector">
+                            Face detection
+                        </a>
+                    </div>
+                </div> -->
+                <div class="navbar-item has-dropdown is-hoverable is-tab {% if request.path == '/demo/' %} is-active {% endif %}">
+                    <a class="navbar-link">
+                        Demos
+                    </a>
+
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="/demos/speech">
+                            Speech
+                        </a>
+                        <a class="navbar-item" href="/demos/speech/gpt">
+                            chatGPT
+                        </a>
+                        <a class="navbar-item">
+                            Mirror
+                        </a>
+                        <a class="navbar-item">
+                            Follow
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="select">
+                        <select id="device-type">
+                            <option>Head</option>
+                            <option>Andrea</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="navbar-item">
+                    <div class="select">
+                        <select id="usb-devices">
+                            {% for usb in usb_ports %}
+                                <option {% if usb == connected_usb_port %} selected {% endif %} value="{{usb}}">{{usb}}</option>
+                            {% endfor %}
+                            <option value="fake">fake</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="navbar-item">
+                    <div class="control">
+                        <button id="connectbutton" onclick="toggleConnection()" class="button {% if not connected %} is-warning {% else %} is-primary {% endif %}">{{"Connect" if not connected else "Disconnect"}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    {% block content %}
+        <div class="block">
+            <h1 class="title">Humanoid Lab Web App</h1>
+            <div class="box">
+                <p>
+                    Use the navbar to connect to android Andrea or one of the educational heads.
+                </p>
+                <p>
+                    Then choose a task from the navbar.
+                </p>
+            </div>
+            <div class="box">
+                <h2 class="subtitle"><a href="/controls">Controls</a></h2>
+                <p>
+                    Provide sliders to adjust each actuator.
+                </p>
+            </div>
+            <div class="box">
+                <h2 class="subtitle"><a href="/animations">Animations</a></h2>
+                <p>
+                    Allows to run predefined animations.
+                </p>
+            </div>
+        </div>
+    {% endblock %}
+
+</body>
+
+<script>
+    function toggleConnection() {
+        usbPort = document.getElementById('usb-devices').value
+        device = document.getElementById('device-type').value
+        path = '/' + document.getElementById('connectbutton').innerText.toLowerCase() + '?port=' + usbPort + '&device=' + device
+        console.log('switching connection, path:' + path)
+        fetch(path)
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data)
+                v = 'Connect'
+                if (data['connected']) {
+                    v = 'Disconnect'
+                }
+                window.location.reload() // TODO: only if it worked
+            });
+    }
+</script>
+
+</html>

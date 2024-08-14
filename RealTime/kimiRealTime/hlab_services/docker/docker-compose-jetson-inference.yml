@@ -1,0 +1,18 @@
+services:
+  tracking:
+    image: "dustynv/jetson-inference:r35.4.1"
+    ports:
+      - "8001:8001"
+      - "8554:8554"
+    runtime: nvidia
+    volumes:
+      - type: bind
+        source: ${MODELS_PATH}/jetson_default_models
+        target: /jetson-inference/data
+      - type: bind
+        source: ${SCRIPTS_PATH}/
+        target: /jetson-inference/scripts
+    devices:
+      - "${CAMERA_DEVICE}:${CAMERA_DEVICE}"
+    command: 
+      ["python3", "/jetson-inference/scripts/posenet_socket.py", "${CAMERA_DEVICE}", "webrtc://@:8554/my_stream", "--headless", "--input-flip=rotate-180"]

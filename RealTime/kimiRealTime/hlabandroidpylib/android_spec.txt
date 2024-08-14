@@ -1,0 +1,53 @@
+idx,  short,  name,  init, group
+0, LULid, Left UpperEyelid O/C, 0, Head_Eyes
+1, RULid, Right UpperEyelid O/C, 0, Head_Eyes
+2, LEyeRL, Left Eyeball R/L, 128, Head_Eyes
+3, REyeRL, Right Eyeball R/L, 128, Head_Eyes
+4, EyeUD, Both Eyeballs U/D, 128, Head_Eyes
+5, LLLid, Left LowerEyelid O/C, 22, Head_Eyes
+6, RLLid, Right LowerEyelid O/C, 22, Head_Eyes
+7, BrowDU, Eyebrows D/U, 0, Head_Eyes
+8, BrowSh, Eyebrow Shrink, 0, Head_Eyes
+9, LCheek, Left Cheek D/U, 0, Head_Mouth
+10, RCheek, Right Cheek D/U, 0, Head_Mouth
+11, MouthPull, MouthCorner Pull, 0, Head_Mouth
+12, LipsSrk, LipsShrink, 0, Head_Mouth
+13, LipsDU, Lips D/U, 0, Head_Mouth
+14, TongueDU, Tongue D/U, 0, Head_Mouth
+15, MouthCO, Mouth C/O, 0, Head_Mouth
+16, HeadLeanLR, Head lean L/R, 128, Head_Neck
+17, HeadDU, Head D/U, 128, Head_Neck
+18, HeadTurnRL, Head turn R/L, 125, Head_Neck
+19, NeckDU, Neck Down/Up, 110, Head_Neck
+20, BodyRL, Waist R/L, 128, Body_Waist
+21, BodyFR, Waist Front/Rear, 32, Body_Waist
+22, BodyTurnRL, Waist turn R/L, 128, Body_Waist
+23, HipBackFront, Hip Back/Front, 70, Body_Hip
+24, LShldDU, LeftShoulder D/U, 32, Arm_Left
+25, LShldRF, LeftShoulder R/F, 32, Arm_Left
+26, LArmRF, LeftArm R/F, 64, Arm_Left
+27, LArmCO, LeftArm Close/Open, 128, Arm_Left
+28, LUACw, LeftUpperArm CW/CCW, 32, Arm_Left
+29, LElbowSA, LeftElbow Straight/Angle, 32, Arm_Left
+30, LFArmCw, LeftForeArm CW/CCW, 64, Arm_Left
+31, LWristIO, LeftWrist In/Out, 128, Arm_Left
+32, LWristUD, LeftWrist Up/Down, 128, Arm_Left
+33, LThumbOI, LeftThumb Out/In, 0, Arm_Left
+34, LIndexOI, LeftIndexfinger, 0, Arm_Left
+35, LMiddleOI, LeftMiddlefinger, 0, Arm_Left
+36, LRingOI, LeftRingfinger, 0, Arm_Left
+37, LLittleOI, LeftLittlefinger, 0, Arm_Left
+38, RShldDU, RightShoulder D/U, 32, Arm_Right
+39, RShldRF, RightShoulder R/F, 32, Arm_Right
+40, RArmRF, RightUpperArm R/F, 64, Arm_Right
+41, RArmCO, RightUpperArm C/O, 128, Arm_Right
+42, RUACw, RightUpperArm CW/CCW, 32, Arm_Right
+43, RElbowSA, RightElbow Straight/Angle, 32, Arm_Right
+44, RFArmCw, RightForeArm CW/CCW, 64, Arm_Right
+45, RWristIO, RightWrist In/Out, 128, Arm_Right
+46, RWristUD, RightWrist Up/Down, 128, Arm_Right
+47, RThumbOI, RightThumb Out/In, 0, Arm_Right
+48, RIndexOI, RightIndexfinger, 0, Arm_Right
+49, RMiddleOI, RightMiddlefinger, 0, Arm_Right
+50, RRingOI, RightRingfinger, 0, Arm_Right
+51, RLittleOI, RightLittlefinger, 0, Arm_Right

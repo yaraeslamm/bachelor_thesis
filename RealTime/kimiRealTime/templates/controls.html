@@ -1,0 +1,70 @@
+
+{% extends 'base.html' %}
+
+{% block scriptfile %}
+    <script type="text/javascript" src="/static/script/controls.js"></script>
+{% endblock %}
+
+
+{% block content %}
+    {% if not connected %}
+        <p>You need to connect to a device first.</p>
+    {% else %}
+        {% for top, subgroup in actuators_by_group.items() %}
+            <div class="block">
+                <section class="hero">
+                    <span class="tag is-large">{{ top }}</span>
+                </section>
+                {% for sub, actuators in subgroup.items() %}
+                <span class="tag is medium">{{ sub }}</span>
+                <div class="columns is-multiline">
+                    {% for actuator in actuators %}
+                        <div class="column is-narrow">
+                            <div class="box">
+                                <label class="label" for="slider-{{ actuator.idx }}">{{ actuator.name }}</label>
+                                <div class="control">
+                                    <input type="range" class="slider" min="0" max="255" id="slider-{{ actuator.idx }}" name="{{ actuator.idx }}" value="{{ values[actuator.idx] }}" oninput="singleupdate(this.name, this.value)">
+                                </div>
+                                <span id="slider-val-{{ actuator.idx }}">{{ values[actuator.idx] }}</span>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+        <div class="box">
+
+            <!-- <div class="control">
+                <input type="button" id="pressurebutton" onclick="switchpressure()" value='Pressure {{"on" if not has_pressure else "off"}}'>
+                <input type="button" class="button" id="pressurebutton" onclick="pressureoff()" value='Pressure off'>
+                <input type="button" class="button" id="pressurebutton" onclick="pressureon()" value='Pressure on'>
+            </div> -->
+            <input type="button" class="button" id="pressurebutton" onclick="pressureoffdisconnect()" value='Pressure off and disconnect'>
+            <input type="button" class="button" id="changeActuatorsButton" onclick="changeActuators()" value='Change Actuators'>
+            <div class="control">
+                <p>Current Values: <pre id="values_display">{{values|tojson}}</pre></p>
+                <p>
+                    Changed Values: <pre id="changed_values_display">{{changed_values|tojson}}</pre>
+                    <button class="button" onclick="resetChangedValues()">Reset</button>
+                </p>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
