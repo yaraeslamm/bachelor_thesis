@@ -1,0 +1,48 @@
+#usda 1.0
+(
+    doc ="""Generated from node description file FloatArrayTunerNode.ogn
+Contains templates for node types found in that file."""
+)
+
+def OmniGraph "TestGraph"
+{
+    token evaluator:type = "push"
+    int2 fileFormatVersion = (1, 3)
+    token flatCacheBacking = "Shared"
+    token pipelineStage = "pipelineStageSimulation"
+
+    def OmniGraphNode "Template_omni_avatar_FloatArrayTuner" (
+        docs="""Manage a custom tuner array with gain and offset. Output array has the same length as names."""
+    )
+    {
+        token node:type = "omni.avatar.FloatArrayTuner"
+        int node:typeVersion = 1
+
+        # 4 attributes
+        custom float[] inputs:array = [] (
+            docs="""Input array"""
+        )
+        custom float[] inputs:gains = [] (
+            docs="""Scale weights"""
+        )
+        custom token[] inputs:names = [] (
+            docs="""Element names. Defines the output size."""
+        )
+        custom float[] inputs:offsets = [] (
+            docs="""Offset weights after scale"""
+        )
+
+        # 1 attribute
+        custom float[] outputs:array (
+            docs="""Output array"""
+        )
+
+        # 2 attributes
+        custom float[] state:gain_defaults = [] (
+            docs="""Gain default values"""
+        )
+        custom float[] state:offset_defaults = [] (
+            docs="""Offset default values"""
+        )
+    }
+}

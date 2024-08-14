@@ -1,0 +1,111 @@
+{
+    "omni.avatar.ReceiveLivelink": {
+        "exclude" : ["tests"],
+        "version": 1,
+        "description": "Receive data through Livelink connection.",
+        "language": "Python",
+        "metadata": {
+            "uiName": "Receive Livelink"
+        },
+        "inputs": {
+            "time": {
+                "type": "float",
+                "description": ["The current time in seconds"],
+                "default": 0.0,
+                "metadata": {
+                    "uiName": "Time"
+                }
+            },
+            "activate": {
+                "type": "bool",
+                "description": "activate livelink connection",
+                "default": false,
+                "metadata": {
+                    "uiName": "Activate"
+                }
+            },
+            "face_filter": {
+                "type": "string",
+                "description": ["Regular expression to filter facial names/weights"],
+                "default": "(?!Head)(.*)",
+                "metadata": {
+                    "uiName": "Face Filter Expression"
+                }
+            },
+            "livelink_subject": {
+                "type": "token",
+                "description": "select a livelink subject name",
+                "default": "Audio2Face",
+                "metadata": {
+                    "uiName": "Subject Name"
+                }
+            },
+            "livelink_host": {
+                "type": "string",
+                "description": "livelink server host name",
+                "default": "0.0.0.0",
+                "metadata": {
+                    "uiName": "Host Name"
+                }
+            },
+            "livelink_port": {
+                "type": "uint",
+                "description": "livelink server port number",
+                "default": 12030,
+                "metadata": {
+                    "uiName": "Port Number"
+                }
+            },
+            "timeout": {
+                "type": "float",
+                "description": "server timeout seconds",
+                "default": 0,
+                "metadata": {
+                    "uiName": "Timeout"
+                }
+            }
+        },
+        "outputs": {
+            "face_weights": {
+                "type": "float[]",
+                "description": "receiving face weights",
+                "default": [],
+                "metadata": {
+                    "uiName": "Face Weights"
+                }
+            },
+            "face_names": {
+                "type": "token[]",
+                "description": "receiving face names",
+                "default": [],
+                "metadata": {
+                    "uiName": "Face Names"
+                }
+            },
+            "subjects": {
+                "type": "token[]",
+                "description": "receiving subject names",
+                "default": [],
+                "metadata": {
+                    "uiName": "Subjects"
+                }
+            },
+            "connected": {
+                "type": "token[]",
+                "description": "hostnames of connected clients",
+                "default": [],
+                "metadata": {
+                    "uiName": "Connected"
+                }
+            },
+            "address": {
+                "type": "string",
+                "description": "activated server address",
+                "default": "",
+                "metadata": {
+                    "uiName": "Address"
+                }
+            }
+        }
+    }
+}

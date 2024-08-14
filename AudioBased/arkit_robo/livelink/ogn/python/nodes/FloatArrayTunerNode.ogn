@@ -1,0 +1,75 @@
+{
+    "omni.avatar.FloatArrayTuner": {
+        "exclude" : ["tests"],
+        "version": 1,
+        "description":
+            "Manage a custom tuner array with gain and offset. Output array has the same length as names.",
+        "language": "Python",
+        "metadata": {
+            "uiName": "Float Array Tuner"
+        },
+        "inputs": {
+            "array": {
+                "type": "float[]",
+                "description": "Input array",
+                "metadata": {
+                    "uiName": "Array"
+                }
+            },
+            "names": {
+                "type": "token[]",
+                "description": "Element names. Defines the output size.",
+                "default": [],
+                "metadata": {
+                    "uiName": "Names",
+                    "hidden": true
+                }
+            },
+            "gains": {
+                "type": "float[]",
+                "description": "Scale weights",
+                "default": [],
+                "metadata": {
+                    "uiName": "Gains"
+                }
+            },
+            "offsets": {
+                "type": "float[]",
+                "description": "Offset weights after scale",
+                "default": [],
+                "metadata": {
+                    "uiName": "Offsets"
+                }
+            }
+        },
+        "state": {
+            "gain_defaults": {
+                "type": "float[]",
+                "description": "Gain default values",
+                "default": [],
+                "metadata": {
+                    "uiName": "Gain Defaults",
+                    "hidden": true
+                }
+            },
+            "offset_defaults": {
+                "type": "float[]",
+                "description": "Offset default values",
+                "default": [],
+                "metadata": {
+                    "uiName": "Offset Defaults",
+                    "hidden": true
+                }
+            }
+        },
+        "outputs": {
+            "array": {
+                "type": "float[]",
+                "description": "Output array",
+                "metadata": {
+                    "uiName": "Array"
+                }
+            }
+        }
+    }
+}

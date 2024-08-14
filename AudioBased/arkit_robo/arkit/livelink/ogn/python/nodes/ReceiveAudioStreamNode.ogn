@@ -1,0 +1,87 @@
+{
+    "omni.avatar.ReceiveAudioStream": {
+        "exclude" : ["tests"],
+        "version": 1,
+        "description": "Receive audio through network connection.",
+        "language": "Python",
+        "metadata": {
+            "uiName": "Receive Audio Stream"
+        },
+        "inputs": {
+            "time": {
+                "type": "float",
+                "description": ["Reference time in seconds"]
+            },
+            "activate": {
+                "type": "bool",
+                "description": "activate livelink connection",
+                "default": false,
+                "metadata": {
+                    "uiName": "Activate"
+                }
+            },
+            "host": {
+                "type": "string",
+                "description": "livelink server host name",
+                "default": "0.0.0.0",
+                "metadata": {
+                    "uiName": "Host Name"
+                }
+            },
+            "port": {
+                "type": "uint",
+                "description": "livelink server port number",
+                "default": 12031,
+                "metadata": {
+                    "uiName": "Port Number"
+                }
+            },
+            "timeout": {
+                "type": "float",
+                "description": "server timeout seconds",
+                "default": 0,
+                "metadata": {
+                    "uiName": "Timeout"
+                }
+            }
+        },
+        "outputs": {
+            "time": {
+                "type": "float",
+                "description": ["Track time in seconds"]
+            },
+            "buffer": {
+                "type": "float[]",
+                "description": "receiving audio buffer",
+                "default": [],
+                "metadata": {
+                    "uiName": "Buffer"
+                }
+            },
+            "connected": {
+                "type": "token[]",
+                "description": "hostnames of connected clients",
+                "default": [],
+                "metadata": {
+                    "uiName": "Connected"
+                }
+            },
+            "playing": {
+                "type": "token[]",
+                "description": "hostnames of clients playing audio buffer.",
+                "default": [],
+                "metadata": {
+                    "uiName": "Playing"
+                }
+            },
+            "address": {
+                "type": "string",
+                "description": "activated server address",
+                "default": "",
+                "metadata": {
+                    "uiName": "Address"
+                }
+            }
+        }
+    }
+}
