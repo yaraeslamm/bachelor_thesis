@@ -1,2 +1,4 @@
 AudioBased/kimiOmniverse/data/songs/mesh/christmas_lights_vocals.npy filter=lfs diff=lfs merge=lfs -text
 AudioBased/kimiOmniverse/data/songs/mesh/feliz_navidad_vocals.npy filter=lfs diff=lfs merge=lfs -text
+RealTime/kimiRealTime/data/songs/mesh/christmas_lights_vocals.npy filter=lfs diff=lfs merge=lfs -text
+RealTime/kimiRealTime/data/songs/mesh/feliz_navidad_vocals.npy filter=lfs diff=lfs merge=lfs -text
