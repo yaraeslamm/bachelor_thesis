@@ -15,8 +15,8 @@ The Audio-Based System integrates Omniverse integrates Omniverse with Kimi for a
 
 ## Usage
 1. Audio File Configuration (to choose an audio file for Kimi to say):
-  1. In the kimiOmniverse folder, open app.py and set the audio_file_path attribute to the path of your desired .wav file.**
-  2. In the ARKit_robo folder, open demo_with_wav_file.py in the demo directory and set the test_wav attribute to the same file path.
+     1. In the kimiOmniverse folder, open app.py and set the audio_file_path attribute to the path of your desired .wav file.
+     2. In the ARKit_robo folder, open demo_with_wav_file.py in the demo directory and set the test_wav attribute to the same file path.
 
 2. Kimi Setup:
  * Before running the audio processing files, you need to connect to the robotic head (Kimi) with your desired wav_file already in audio_file_path.
