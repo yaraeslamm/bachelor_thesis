@@ -8,3 +8,8 @@ The project is divided into two main components:
 2. **Audio-Based System**: This involves subprojects using Omniverse and Kimi modules.
 
 ## Directory Structure
+
+
+```bash
+pip install foobar
+```
