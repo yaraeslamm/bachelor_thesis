@@ -1,7 +1,7 @@
 # Audio-Based System
 
 ## Overview
-The Audio-Based System integrates Omniverse and Kimi to process and respond to audio input.
+The Audio-Based System integrates Omniverse integrates Omniverse with Kimi for audio-driven facial expressions
 
 ## Installation and Setup
 1. Navigate to the `audioBased` directory:
@@ -14,9 +14,8 @@ The Audio-Based System integrates Omniverse and Kimi to process and respond to a
     ```
 
 ## Usage
-1. Audio File Configuration:
-* To choose an audio file for Kimi to say:
- 1. In the kimiOmniverse folder, open app.py and set the audio_file_path attribute to the path of your desired .wav file.
+1. Audio File Configuration (to choose an audio file for Kimi to say):
+ 1. In the kimiOmniverse folder, open app.py and set the audio_file_path attribute to the path of your desired .wav file.**
  2. In the ARKit_robo folder, open demo_with_wav_file.py in the demo directory and set the test_wav attribute to the same file path.
 
 2. Kimi Setup:
