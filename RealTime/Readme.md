@@ -1,7 +1,7 @@
 # Real-time System
 
 ## Overview
-The Real-time System is designed for real-time processing using Mediapipe and Kimi, a robotic head. 
+The Real-time System is designed to perform real-time facial expression processing using Mediapipe and Kimi, a robotic head.
 
 ## Installation and Setup
 1. Navigate to the `realtime system` directory:
@@ -22,7 +22,7 @@ The Real-time System is designed for real-time processing using Mediapipe and Ki
      python app.py
      ```
 
-* Open the website appeared in the terminal to connect to the head via the local website.
+* Open the website URL provided in the terminal to connect to the head via the local interface.
 
 2. Mediapipe Setup :
 * Ensure a camera is plugged in.
@@ -32,7 +32,7 @@ The Real-time System is designed for real-time processing using Mediapipe and Ki
    cd ../mediapipeBlendshapes/feature_extraction/mediapipe_feature
      python mediapipe_feature.py
      ```
-* Ensure that Kimi is connected before running Mediapipe.
+<!-- * Ensure that Kimi is connected before running Mediapipe. -->
  ## Notes
  * The real-time system requires a camera and a connection to the robotic head (Kimi) before running Mediapipe.
 
