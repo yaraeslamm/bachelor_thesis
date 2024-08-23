@@ -7,14 +7,14 @@ The project is divided into two main components:
 1. **Real-time System**: This includes subprojects involving Mediapipe and Kimi modules.
 2. **Audio-Based System**: This involves subprojects using Omniverse and Kimi modules.
 
-## Directory Structure
+<!-- ## Directory Structure
 bachelor/
 ├── realtime system/
 │ ├── mediapipe/
 │ └── kimi/
 └── audioBased/
 ├── omniverse/
-└── kimi/
+└── kimi/ -->
 
 
 - **realtime system/**: Contains subprojects related to real-time systems.
@@ -36,4 +36,10 @@ bachelor/
    ```
 3. Install global dependencies:
 
- pip install -r requirements.txt
+    ```python
+   pip install -r requirements.txt
+   ```
+
+# Usage
+* To run the Real-time System, navigate to the realtime system folder and follow the instructions in its README.
+* To run the Audio-Based System, navigate to the audioBased folder and follow the instructions in its README.
