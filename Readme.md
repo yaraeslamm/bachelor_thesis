@@ -7,15 +7,6 @@ The project is divided into two main components:
 1. **Real-time System**: This includes subprojects involving Mediapipe and Kimi modules.
 2. **Audio-Based System**: This involves subprojects using Omniverse and Kimi modules.
 
-<!-- ## Directory Structure
-bachelor/
-├── realtime system/
-│ ├── mediapipe/
-│ └── kimi/
-└── audioBased/
-├── omniverse/
-└── kimi/ -->
-
 
 - **realtime system/**: Contains subprojects related to real-time systems.
   - **mediapipe/**: Integration and implementation using Mediapipe.
@@ -41,5 +32,6 @@ bachelor/
    ```
 
 # Usage
-* To run the Real-time System, navigate to the realtime system folder and follow the instructions in its README.
+* To run the Real-time System, navigate to the [ReaalTime](/Users/funnyflea7/Desktop/bachelor/bachelor/RealTime)
+ folder and follow the instructions in its README.
 * To run the Audio-Based System, navigate to the audioBased folder and follow the instructions in its README.
