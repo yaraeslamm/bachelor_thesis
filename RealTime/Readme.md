@@ -6,7 +6,7 @@ The Real-time System is designed for real-time processing using Mediapipe and Ki
 ## Installation and Setup
 1. Navigate to the `realtime system` directory:
    ```bash
-   cd realtime system
+   cd realtime
     ```
 2. Install the required dependencies:
    ```bash
@@ -22,10 +22,10 @@ The Real-time System is designed for real-time processing using Mediapipe and Ki
      python app.py
      ```
 
-* Follow the instructions in the terminal to connect to the head via the local website.
+* Open the website appeared in the terminal to connect to the head via the local website.
 
 2. Mediapipe Setup :
-*Ensure your camera is plugged in.
+* Ensure a camera is plugged in.
 * Navigate to the feature_extraction directory inside the mediapipeBlendshapes folder:
 
      ```bash
