@@ -1,8 +1,3 @@
-
-#### 3. `audioBased/README.md`
-This README explains how to set up and run the Audio-Based System, including specific instructions for each module.
-
-```markdown
 # Audio-Based System
 
 ## Overview
