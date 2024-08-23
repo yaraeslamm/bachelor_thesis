@@ -32,6 +32,6 @@ The project is divided into two main components:
    ```
 
 # Usage
-* To run the Real-time System, navigate to the [ReaalTime](/Users/funnyflea7/Desktop/bachelor/bachelor/RealTime)
+* To run the Real-time System, navigate to the [ReaalTime](./RealTime)
  folder and follow the instructions in its README.
 * To run the Audio-Based System, navigate to the audioBased folder and follow the instructions in its README.
