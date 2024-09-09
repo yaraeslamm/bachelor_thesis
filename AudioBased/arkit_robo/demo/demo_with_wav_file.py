@@ -124,11 +124,10 @@ def main():
     import threading
     from testing_scripts.network.server import tcp_server
 
-    #listening_thread = threading.Thread(target=tcp_server, args=())
-   # bn_thread = threading.Thread(target=tcp_server, args=())
-
+    #thread for proceesing the blendshapes
     bn_thread = threading.Thread(target=tcp_server, args=(12030,))
 
+    #thread for processing the audio 
     ad_thread = threading.Thread(target=tcp_server, args=(12031,))
 
     # Threads start
@@ -138,26 +137,11 @@ def main():
 
 
 
-
-    #test_wav=Path(r'C:\Users\kimi\Downloads\Andrea-Stimmen\Andrea-Stimmen\Andrea_HarvardSentence_list1-sentence10.wav')
-    #test_wav=Path(r'C:\Users\kimi\Desktop\robotHead-main\robotHead-main\data\speech\audio\hello.wav')
+# Change the path to be the desired audio you want kimi to say 
     test_wav = Path(r'C:\Users\kimi\Desktop\robotHead-main\robotHead-main\data\speech\audio\mesh_test.wav')
-    #test_wav = Path(r'C:\Users\kimi\Downloads\Andrea-Stimmen\Andrea-Stimmen\Andrea_HarvardSentence_list1-sentence10sslowed.wav')
-    #test_wav = Path(r'C:\Users\kimi\Downloads\Andrea-Stimmen\Andrea-Stimmen\Andrea_HarvardSentence_list2-sentence1.wav')
-
-    #test_wav = Path(r'C:\Users\kimi\Desktop\robotHead-main\robotHead-main\data\speech\audio\genderneutral.wav')
-
-    #test_wav=Path(r'C:\Users\kimi\Desktop\mesh_testt.wav')
-    #test_wav = Path(r'C:\Users\kimi\Downloads\neutralized_Jauwairia_humming.wav')
-
-
+ 
     push_wav_to_a2f( str(test_wav) )
     adQueue.put(get_tts_numpy_audio(EXPECTED_SAMPLE_RATE,str(test_wav)))
-
-   # push_audio_track(A2F_URL, audio_data, EXPECTED_SAMPLE_RATE, A2F_AVATAR_INSTANCE, logger=logger)
-
-
-
 
 
 if __name__ == "__main__":

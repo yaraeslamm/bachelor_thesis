@@ -19,19 +19,8 @@ import pygame
 # Initialize pygame mixer for audio playback
 pygame.mixer.init()
 
-# Load the specific audio file
-#audio_file_path = r'C:\Users\kimi\Downloads\Andrea-Stimmen\Andrea-Stimmen\Andrea_HarvardSentence_list1-sentence10.wav'
-#audio_file_path =r'C:\Users\kimi\Desktop\robotHead-main\robotHead-main\data\speech\audio\hello.wav'
+#Load the desired audio file 
 audio_file_path =r'C:\Users\kimi\Desktop\robotHead-main\robotHead-main\data\speech\audio\mesh_test.wav'
-#audio_file_path =r'C:\Users\kimi\Downloads\Andrea-Stimmen\Andrea-Stimmen\Andrea_HarvardSentence_list1-sentence10sslowed.wav'
-#audio_file_path =r'C:\Users\kimi\Downloads\Andrea-Stimmen\Andrea-Stimmen\Andrea_HarvardSentence_list2-sentence1.wav'
-
-#audio_file_path =r'C:\Users\kimi\Desktop\robotHead-main\robotHead-main\data\speech\audio\genderneutral.wav'
-
-
-#audio_file_path =r'C:\Users\kimi\Desktop\mesh_testt.wav'
-
-#audio_file_path =r'C:\Users\kimi\Downloads\neutralized_Jauwairia_humming.wav'
 
 audio = pygame.mixer.Sound(audio_file_path)
 
@@ -95,7 +84,7 @@ def create_app():
     return app
 
 
-
+#ZM1_Setup
 def zmq_receiver():
     context = zmq.Context()
     socket = context.socket(zmq.SUB)
@@ -114,7 +103,7 @@ def zmq_receiver():
             with current_app.app_context():
               current_app.data_list = message
             print("Received list:", data_list)
-            #print("Received message:", message)
+            
             # Check if audio has not been played yet
             if not played_audio:
               #  # Play the audio and get the channel
@@ -127,10 +116,6 @@ def zmq_receiver():
                 played_audio = False
                 audio_channel = None
         
-    
-
-
-
 
 if __name__ == '__main__':
     args = parse_args()
@@ -140,8 +125,6 @@ if __name__ == '__main__':
     logging.getLogger('speech').setLevel(numeric_level)
     app = create_app()
 
-
-#######################
     zmq_thread = threading.Thread(target=zmq_receiver, daemon=True)
     zmq_thread.start()
 

@@ -6,6 +6,7 @@ import json
 import zmq
 import time
 
+#Initializing kimi's actuator list 
 actuators = [0, 127, 0, 0, 0, 0, 0, 0, 0, 0, 0, 127, 127, 127]
 
 import threading
@@ -13,7 +14,7 @@ import queue
 from demo.demo_with_wav_file import bnQueue
 
 
-
+#ZMQ_Setup()
 context =zmq.Context()
 sockett =context.socket(zmq.PUB)
 sockett.bind("tcp://*:5555")
@@ -42,10 +43,9 @@ def udp_server():
         # Print received message
         print("Received message from {}: {}".format(addr, message))
 
-def yaras_mapping(blendshapes,):
-    pass
 
-
+#The mapping function, 
+#Any multiplications to the blendshapes is weight readjustments
 def map_blend_shapes_to_actuators(actuators, blendshapes):
 
 
@@ -97,15 +97,13 @@ def map_blend_shapes_to_actuators(actuators, blendshapes):
     else:
         actuators[6] = blendshapes[23]
 
-        # actuators[6]=statistics.mean(blendshapes[43],blendshapes[44])
 
     if (blendshapes[27 + 1] < blendshapes[28 + 1]):
         actuators[7] = blendshapes[28 + 1]
     else:
         actuators[7] = blendshapes[27 + 1]
 
-    # actuators[7]=statistics.mean(blendshapes[43],blendshapes[44])
-
+ 
     actuators[8] = blendshapes[20]  #
 
     blendshapes[39] = blendshapes[39] * 2
@@ -122,7 +120,7 @@ def map_blend_shapes_to_actuators(actuators, blendshapes):
         else:
             actuators[9] = 255
 
-    #blendshapes[17] = blendshapes[17]*2
+    
 
     if(blendshapes[17]>255):
         actuators[10]=255
@@ -154,7 +152,11 @@ def map_blend_shapes_to_actuators(actuators, blendshapes):
     else:
         actuators[11] = int(blendshapes[52])
 
+    
+    #The following 2 lines to make sure that kimi's actuator 
+# values doesnt exceed 255 and doesn't go lower than 0 
     actuators = [0 if x < 0 else x for x in actuators]
+    actuators=[255 if x>255 else x for x in actuators]
 
 
 
@@ -205,30 +207,47 @@ def tcp_server(port):
                 counter += 1
                 json_str = message.strip()[32:]
 
-                # print(json_str)
                 json_str = json_str[:-12]
-                #print(json_str)
+                
                 dataa = json.loads(json_str)
 
                 names = dataa['Names']
                 weights = dataa['Weights']
 
                 name_weight_dict = {names[i]: weights[i] for i in range(len(names))}
-                #print(weights[17])
-                if(weights[17]>0.11):
-                    weights[17] = weights[17] * 2
+
+                
+                #the weight 17 :JawOpen is for the mouth 
+                #intensify by the factor of ic 
+                #mouth openeing threshold was calibrated with trial error 
+
+                ic = 2
+                mouth_opening_threshold=0.11
+                if(weights[17]>mouth_opening_threshold):
+                    weights[17] = weights[17] * ic
 
                 face_blendshapesAfterAdjustingRange = [int(float((value)) * 255) for value in weights]
 
-                newActuator = map_blend_shapes_to_actuators(actuators, face_blendshapesAfterAdjustingRange)
-                #blen
+               #Manual blinking
+                if counter==100 or counter==101 or counter==101 :
 
-                bnQueue.put(face_blendshapesAfterAdjustingRange)
-                #print("Blendshapes pushed to bnQueue")
-                #print(list(bnQueue.queue))
-                #print[name_weight_dict]
+                   face_blendshapesAfterAdjustingRange[0]=220
+                   face_blendshapesAfterAdjustingRange[5] = 30
+                   newActuator = map_blend_shapes_to_actuators(actuators, face_blendshapesAfterAdjustingRange)
+                else:
+                    if counter%50==0 and counter !=0 :
+                        face_blendshapesAfterAdjustingRange[0] = 200
+                        face_blendshapesAfterAdjustingRange[5] = 20
+                        newActuator = map_blend_shapes_to_actuators(actuators, face_blendshapesAfterAdjustingRange)
+                    else:
+                        newActuator = map_blend_shapes_to_actuators(actuators, face_blendshapesAfterAdjustingRange)
 
-                #print(newActuator)
+                
+                
+                
+                
+                nQueue.put(face_blendshapesAfterAdjustingRange)
+
 
                 current_time = time.time()
                 elapsed_time = current_time - last_sent_time
@@ -241,18 +260,9 @@ def tcp_server(port):
                 else:
                     print(f"Message skipped at {current_time} due to rate limiting")
 
-                #messagee = json.dumps(newActuator)
-                #sockett.send_string(messagee)
+                
                 print(counter)
                 print(name_weight_dict)
-
-
-
-                # do something with data and yaras_mapping-function
-                # ...
-
-                # maybe start wav playing via python here, once first frame is arriving from omniverse
-
 
 
 
@@ -283,11 +293,6 @@ def tcp_server(port):
 
         # Close the connection
         conn.close()
-
-#tcp_server()
-#s
-#push_audio_track(A2F_URL, audio_data, EXPECTED_SAMPLE_RATE, A2F_AVATAR_INSTANCE, logger=logger)
-
 
 '''
 subject_json={
