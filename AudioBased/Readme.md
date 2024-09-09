@@ -31,8 +31,8 @@ To choose an audio file for Kimi to say :
 3. Omniverse Setup :
 
 * Ensure Omniverse is running in the background:
-1. Open Omniverse, log in, and navigate to the audio2face folder in ARKit_robo/usd.
-2. Open the stream_python_livelink_project file to ensure that the system is prepared to run Audio2Face tasks.
+  1. Open Omniverse, log in, and navigate to the audio2face folder in ARKit_robo/usd.
+  2. Open the stream_python_livelink_project file to ensure that the system is prepared to run Audio2Face tasks.
 
 * Navigate to the demo directory inside the ARKit_robo folder:
 
