@@ -81,7 +81,7 @@ def create_app():
 
 
 
-
+# ZMQ_Setup
 def zmq_receiver():
     context = zmq.Context()
     socket = context.socket(zmq.SUB)
@@ -97,13 +97,8 @@ def zmq_receiver():
             with current_app.app_context():
               current_app.data_list = message
 
-
-              #update_actuators()
-
-
-
             print("Received list:", data_list)
-            #print("Received message:", message)
+
         
     
 
