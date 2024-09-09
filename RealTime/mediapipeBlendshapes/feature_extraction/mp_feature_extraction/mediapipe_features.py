@@ -34,6 +34,7 @@ context = zmq.Context()
 socket = context.socket(zmq.PUB)
 socket.bind("tcp://*:5555")
 
+#initial values of kimi's actuators
 actuators = [0, 127, 0, 0, 0, 0, 0, 0, 0, 0, 0, 127, 127, 127]
 
 
@@ -149,9 +150,10 @@ def plot_blendshapes(blendshapes):
     plt.show()
 
 
+# The mapping function 
 
 def map_blend_shapes_to_actuators(actuators,blendshapes,yaw ,pitch,roll):
-
+#Head_rotations
     yaw=127+(yaw*127/30)
     if(yaw>255):
         actuators[13]=255
@@ -197,7 +199,7 @@ def map_blend_shapes_to_actuators(actuators,blendshapes,yaw ,pitch,roll):
 
 
     if(abs(eyeL-eyeR)<0.2):
-        actuators[1]=127
+        actuators[1]=actuators[1]
     else:
         
         eyeL=int(float((eyeL)) * 128)
@@ -206,14 +208,6 @@ def map_blend_shapes_to_actuators(actuators,blendshapes,yaw ,pitch,roll):
             actuators[1]=eyeL
         else:
             actuators[1]=eyeR+127
-
-
-    # if(blendshapes[12+1]<blendshapes[13+1]):
-    #    actuators[1]=127-blendshapes[13+1]
-    # else:
-    #     actuators[1]=127+blendshapes[12+1]
-
-    
 
 
 
@@ -246,16 +240,11 @@ def map_blend_shapes_to_actuators(actuators,blendshapes,yaw ,pitch,roll):
     else :
         actuators[6]= blendshapes[43+1]   
 
-    #actuators[6]=statistics.mean(blendshapes[43],blendshapes[44])       
-
-
 
     if (blendshapes[27+1]<blendshapes[28+1]):
         actuators[7]= blendshapes[28+1] 
     else :
         actuators[7]= blendshapes[27+1]
-
-    #actuators[7]=statistics.mean(blendshapes[43],blendshapes[44]) 
 
     
     actuators[8]=blendshapes[37+1]#
@@ -276,42 +265,12 @@ def map_blend_shapes_to_actuators(actuators,blendshapes,yaw ,pitch,roll):
             actuators[9]=255 
 
    
-    #if(blendshapes[24+1]<126 and blendshapes[24+1]>0):
-
-         #blendshapes[24+1]=blendshapes[24+1]*1.25
-         #actuators[10]=blendshapes[24+1]
-
-
-    #else:
-        #blendshapes[24+1]=blendshapes[24+1]*1.5
-    #actuators[10]=blendshapes[24+1]
-
     actuators[10]=blendshapes[24+1]
 
+#The following 2 lines to make sure that kimi's actuator 
+# values doesnt exceed 255 and doesn't go lower than 0 
     actuators=[0 if x<0 else x for x in actuators]
     actuators=[255 if x>255 else x for x in actuators]
-
-
-
-
-
-    
-    
-
-   
-   # actuators[4]=int((blendshapes[2]+blendshapes[3]+blendshapes[4]-blendshapes[0]-blendshapes[1])/5)
-
-
-        # Head_Eyes
-    # actuators[0] = blendshapes[8] - blendshapes[9]  # upper eyelid open close: EyeBlinkLeft - EyeBlinkRight
-    # actuators[1] = (blendshapes[14] - blendshapes[12] + blendshapes[15] - blendshapes[13]) / 2  # eyeball left right
-    # actuators[2] = (blendshapes[16] - blendshapes[10] + blendshapes[17] - blendshapes[11]) / 2  # eyeball up down
-    # actuators[3] = blendshapes[18] - blendshapes[19]  # lower eyelid open close: EyeSquintLeft - EyeSquintRight
-    # actuators[4] = (blendshapes[3] + blendshapes[4] - blendshapes[0] - blendshapes[1]) / 2  # eyebrow up down
-    # actuators[5] = blendshapes[2]  # eyebrow shrink (inner up)
-
-    #     # Head_Mouth
-    # actuators[6] = (blendshapes[43] - blendshapes[29] + blendshapes[44] - blendshapes[30]) / 2  # mouth corner up down
 
     return actuators
 
@@ -320,7 +279,7 @@ def map_blend_shapes_to_actuators(actuators,blendshapes,yaw ,pitch,roll):
 def main(args):
     lists_sent = 0
     start_time = time.time()
-
+#Write the model path after downloading it on your local PC in the model_asset_path attribute
     base_options = python.BaseOptions(model_asset_path=r'/home/yara/Downloads/face_landmarker.task')
 
     options = vision.FaceLandmarkerOptions(base_options=base_options,
@@ -397,20 +356,6 @@ def main(args):
 
 
 
-                # Extract the face blendshapes category names and scores.
-
-                #TODO: Yara, now you can extract the beldnshapes and their respective names. Also yaw, pitch, roll of the head.
-
-                # Could you try to map this yaw, pitch, roll to the robotic head first.
-
-                # Then start with mouth opening, mounth closing of the android head
-
-                # You will have to re-adjust the blendshape range, therefore, use this equation:
-
-                # mapped_value=((value−min1)/(max1−min1))× (max2−min2)+min2 where min1, max1 mediapipe blendshape range
-
-                # min2, max2 android robots value range
-
 
 
 
@@ -423,9 +368,7 @@ def main(args):
 
                                            face_blendshapes]
                 
-                #print(face_blendshapes_names[2])
-                #mapped_value=((value)/(1))× (255) where min1, max1 mediapipe blendshape range
-                #formatted_blendshapes_values = [f"{value:.6f}" for value in blendshapes_values]
+
                 face_blendshapesAfterAdjustingRange=[int(float((value)) * 255) for value in face_blendshapes_scores]
                 new_actuators_values =map_blend_shapes_to_actuators(actuators,face_blendshapesAfterAdjustingRange,yaw,pitch,roll )
                      
@@ -433,36 +376,17 @@ def main(args):
                 lists_sent += 1
                 if(lists_sent<25):
                     socket.send_string(message)
-                #lists_sent += 1
-                # Calculate elapsed time
+               
                 elapsed_time = time.time() - start_time
     
     # If one second has passed, print the number of lists sent and reset
+    # this is a checker that kimi doesnt take more than 25 lists/sec (kimi's limit)
                 if elapsed_time >= 1.0:
                      print(f"Lists sent in the last second: {lists_sent}")
                      lists_sent = 0
                      start_time = time.time()
-                 #print(face_blendshapes)
-                #print(face_blendshapesAfterAdjustingRange)
-                # print("roll : ",round(roll,5))
-                # print("pitch : ", round(pitch,5))
-                #print("yaw : ", round(yaw,5))
-               # print(face_blendshapesAfterAdjustingRange)
-
-                #print("outLeft",face_blendshapes_scores[14])
-                #print("inRight",face_blendshapes_scores[13])
-                #time.sleep(1)
-
-
-
                 
 
-                
-
-
-
-
-                #plot_blendshapes(face_blendshapes_scores)
 
 
 

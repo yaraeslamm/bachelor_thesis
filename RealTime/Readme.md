@@ -37,7 +37,7 @@ The Real-time System is designed to perform real-time facial expression processi
  * The real-time system requires a camera and a connection to the robotic head (Kimi) before running Mediapipe.
  
  ## Troubleshooting
-* Ensure you are ran kimi and is connected first before runnig the mediapipe_feature.py.py file . 
+* Ensure you are ran kimi and is connected first before runnig the mediapipe_features.py file . 
 
-* If there is an issue with Kimi, stop running app.py and restart it. Try adjusting any actuator value manually, then re-run mediapipe_feature.py.py.
+* If there is an issue with Kimi, stop running app.py and restart it. Try adjusting any actuator value manually, then re-run mediapipe_features.py.
 
