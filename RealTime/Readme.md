@@ -4,7 +4,7 @@
 The Real-time System is designed to perform real-time facial expression processing using Mediapipe and Kimi, a robotic head.
 
 ## Installation and Setup
-1. Navigate to the `realtime system` directory:
+1. Navigate to the `RealTime` directory:
    ```bash
    cd realtime
     ```
@@ -18,7 +18,7 @@ The Real-time System is designed to perform real-time facial expression processi
  * Before running the Mediapipe module, you need to connect to the robotic head (Kimi).
  * Run the app.py script located in the kimiRealTime folder:
     ```bash
-     cd kimi
+     cd kimiRealTime
      python app.py
      ```
 
@@ -35,4 +35,9 @@ The Real-time System is designed to perform real-time facial expression processi
 <!-- * Ensure that Kimi is connected before running Mediapipe. -->
  ## Notes
  * The real-time system requires a camera and a connection to the robotic head (Kimi) before running Mediapipe.
+ 
+ ## Troubleshooting
+* Ensure you are ran kimi and is connected first before runnig the mediapipe_feature.py.py file . 
+
+* If there is an issue with Kimi, stop running app.py and restart it. Try adjusting any actuator value manually, then re-run mediapipe_feature.py.py.
 
