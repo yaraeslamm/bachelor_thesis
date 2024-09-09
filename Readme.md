@@ -17,5 +17,5 @@ The project is divided into two main components:
   - **kimiOmniverse/**: Robotic head code for audio processing.
 
 ### Quick Start
-* To run the Real-time System, navigate to the [Real-time System](./realtime%20system/README.md) folder and follow the instructions in its README.
-* To run the Audio-Based System, navigate to the [Audio-Based System](./audioBased/README.md) folder and follow the instructions in its README.
+* To run the Real-time System, navigate to the [Real-time System](./RealTime/README.md) folder and follow the instructions in its README.
+* To run the Audio-Based System, navigate to the [Audio-Based System](./AudioBased/README.md) folder and follow the instructions in its README.
